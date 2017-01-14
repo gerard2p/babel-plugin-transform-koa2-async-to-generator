@@ -4,11 +4,10 @@ export default function () {
 		inherits: require('babel-plugin-syntax-async-functions'),
 		visitor: {
 			Function: function Function (path, state) {
-				if (!path.node.async || path.node.generator) return;
 				try {
 					helper(path, state);
 				} catch(e) {
-					console.log(e);
+					// console.log(e);
 				}
 			}
 		}
